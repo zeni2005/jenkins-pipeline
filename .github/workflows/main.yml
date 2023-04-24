@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone repository') {
+            steps {
+                git 'https://github.com/zeni2005/jenkins-pipeline'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh './build.sh'
+            }
+        }
+    }
+}
